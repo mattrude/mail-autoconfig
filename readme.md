@@ -2,7 +2,13 @@
 
 This is the autoconfig file for [Thunderbird](http://www.mozilla.org/en-US/thunderbird/) and other mail clients.
 
-It is expected to be accessible via autoconfig.example.com. Below is a example Nginx config for this site.
+It is expected to be accessible via autoconfig.example.com. 
+
+## Web Server Configurations
+
+Below are example web server config for this site.
+
+### Nginx Server
 
     server {
         listen 80;
@@ -10,6 +16,13 @@ It is expected to be accessible via autoconfig.example.com. Below is a example N
         server_name autoconfig.example.com autoconfig.example.org autoconfig.example.net;
         root /var/www/mail-autoconfig;
     }
+
+### Apache Server
+
+    <VirtualHost *:80>
+        ServerName autoconfig.example.com
+        DocumentRoot /var/www/mail-autoconfig
+    </VirtualHost>
 
 ## Other Resources
 
